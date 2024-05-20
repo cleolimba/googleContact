@@ -1,0 +1,494 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --gray: #CCCCCC;
+  --white: #fff;
+  --blue: #C2E7FF;
+  --light: #77B5FE;
+  --clear: #77B5FE;
+  --red: #ff0000;
+}
+
+body{
+  background-color: #F6F8FC;
+  margin-left: 5%;
+  padding: 0;
+  min-width: 100vh;
+  overflow-x: hidden;
+} 
+
+.header{
+  display: flex;
+  width: 100%;
+  height: 80%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 60%;
+}
+.headerNavigation{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.user{
+  width: 40px;
+  height: 40px;
+}
+.title{
+  font-size: 25px;
+}
+
+.main{
+  margin-top: 3%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.main__menu{
+  width: 20%;
+  height: 400px;
+}
+.main__content{
+  width: 80%;
+  background-color: var(--white);
+  height: 580px;
+  border-radius: 3.5%;
+}
+.main-content-fill{
+  width: 100%;
+}
+
+.hide-menu{
+  position: absolute;
+  left: -1000px;
+}
+
+/* style pour les boutons */
+
+.addContact{
+  width: 60%;
+  height: 40px;
+  margin-bottom: 8%;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background: var(--blue);
+  gap: 10%;
+}
+.addContact:hover{
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background: var(--clear);
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  box-shadow: 5px 8px 5px rgb(202, 202, 202);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.addContact:focus, .addContact:active{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.contact{
+  color: black;
+  border: none;
+  background: transparent;
+  font-family: Product Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.98px;
+  text-align: left;
+}
+.btnContact{
+  width: 90%;
+  height: 40px;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8%;
+  gap: 10%;
+}
+.btnContact:hover{
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background: var(--blue);
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.btnContact:focus, .btnContact:active{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.btnFrequent{
+  width: 60%;
+  height: 40px;
+  border-radius: 16px;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10%;
+}
+.btnFrequent:hover{
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background: var(--blue);
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.btnFrequent:focus, .btnFrequent:active{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.frequent{
+  text-decoration: none;
+  color: black;
+}
+
+/* style sur la barre de recherche */
+
+.input-box{
+  width: 400%;
+  height: 40px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 6px;
+  margin-left: 10%;
+}
+.input-box input{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 0 15px 0 65px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+.input-box .search{
+  position: relative;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 60px;
+  border-radius: 6px 0 0 6px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search .material-symbols-outlined{
+  font-size: 25px;
+  color: var(--clear);
+}
+
+/* style de la partie main  */
+
+.pageVeriege{
+  padding-top: 2%;
+  padding-left: 5%;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+.accueil{
+  width: 25%;
+  height: 25%;
+  margin: auto;
+  padding-top: 8%;
+  object-fit: 50%;
+  display: flex;
+}
+.parag{
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+.basPhoto{
+  display: flex;
+  text-align: center;
+  padding-left: 35%;
+  gap: 8%;
+  padding-top: 2.5%;
+}
+.btnAcueilAddContact{
+  width: 20%;
+  height: 40px;
+  margin-bottom: 8%;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10%;
+}
+.btnCreer{
+  color: rgb(84, 84, 219);
+  border: none;
+  background: transparent;
+  font-family: Product Sans;
+  font-size: 14px;
+  text-align: left;
+  font-weight: bolder;
+  font-family: "Roboto", sans-serif;
+}
+#basPage{
+  color: blue;
+}
+.btnAcueilAddContact:hover{
+  background: var(--blue);
+  cursor: pointer;
+}
+
+/* style menue berge */
+
+ion-icon:hover{
+  cursor: pointer;
+  background: gainsboro;
+  border-radius: 50%;
+}
+
+/* style sur la page ajouter les contacts */
+
+.popup{
+  width: 60%;
+  height: 110%;
+  display: flex;
+  justify-content: center;
+  padding-left: 5%;
+  padding-left: 10%;
+}
+.invisible{
+  display: none;
+}
+.submit{
+  border: none;
+  color: #CCCCCC;
+}
+
+.imageContact{
+  display: flex;
+  align-items: end;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-bottom: 10%;
+}
+.auto{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.addCircle{
+  position: relative;
+  right: 30px;
+  top: 0;
+  background: var(--white);
+  border-radius: 50%;
+}
+.libelles{
+  font-size: 16px;
+  background: transparent;
+}
+.libelles:hover{
+  cursor: pointer;
+  background: var(--clear);
+}
+.btnPrenom{
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  display: flex;
+  align-items: center;
+  gap: 2.5%;
+}
+.btnNom{
+  padding-left: 5%;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  padding-bottom: 2.5%;
+}
+
+/* listes des contacts */
+
+table {
+  border: none;
+}
+.invisibles{
+  display: none;
+}
+
+/* Bouton libelles et ses actions */
+
+.btnlabel{
+  display: flex;
+  align-items: center;
+}
+.labelBtn{
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+.labelBtn:hover{
+  opacity: .6;
+}
+.labelBtn{
+  width: 150px;
+  margin: auto;
+  display: block;
+}
+.btnLibelle{
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0,.6);
+  padding-top: 60px;
+  display: none;
+}
+.libelleContent{
+  background-color: #F0EDED;
+  border: 1px solid #C9C5C5;
+  margin: 5% auto 10% auto;
+  width: 40%;
+  height: 40%;
+}
+.contenueLibelle{
+  padding: 16px;
+}
+.textName{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+}
+.submit{
+  width: auto;
+  padding: 10px 20px;
+}
+
+/* partie tableau */
+
+form {
+  margin-bottom: 20px;
+}
+table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: none;
+}
+
+/* partie formulaire */
+
+.imageContact{
+  width: 40%;
+  height: auto;
+}
+.libelles{
+  border-radius: 5px;
+  border: 1px solid var(--gray);
+}
+.libelles:hover{
+  background: var(--blue);
+}
+.champPrenom{
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 35px;
+  gap: 6%;
+  margin-top: 6%;
+}
+input{
+  width: 85%;
+  height: 85%;
+}
+.champNoms{
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 35px;
+  gap: 6%;
+  margin-top: 2%;
+  margin-left: 8%;
+}
+.entreprise{
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 35px;
+  gap: 6%;
+  margin-top: 2%;
+}
+.entrepriseFonction{
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 35px;
+  margin-top: 2%;
+  margin-left: 8%;
+  gap: 6%;
+}
+.mail{
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 35px;
+  gap: 6%;
+  margin-top: 2%;
+}
+.phones{
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 35px;
+  gap: 6%;
+  margin-top: 2%;
+}
+.btnEnregistre{
+  background: var(--gray);
+  border: 1px solid var(--gray);
+  font-family: "Roboto", sans-serif;
+  margin-top: 6%;
+  margin-left: 10%;
+  width: 25%;
+  height: 25%;
+  border-radius: 10%;
+  cursor: pointer;
+}
+.btnEnregistre:hover{
+  background: var(--clear);
+  border: 1px solid var(--clear);
+}
