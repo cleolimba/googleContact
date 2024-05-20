@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Contact</title>
+    <link rel="stylesheet" href="../build/css/intlTelInput.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+</head>
+
+<body>
+
+    <!-- La première partie -->
+
+    <header class="header">
+        <div class="headerNavigation">
+            <div class="headerMenu">
+                <span class="iconBerger">
+                    <ion-icon id="btn" name="menu-outline" style="height: 40px; width: 40px;"></ion-icon>
+                </span>
+            </div>
+            <span><img src="/image/profil.png" alt="" class="user"></span>
+            <span><span class="title">Contact</span></span>
+
+        </div>
+        <div class="input-box">
+            <div class="search">
+                <span class="material-symbols-outlined">search</span>
+            </div>
+            <input type="text" placeholder="Rechercher...">
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main__menu" id="main-menu">
+            <div class="boutons">
+                <div class="addContact" id="btnContacts">
+                    <span class="material-symbols-outlined">add</span>
+                    <button class="contact" id="contact">Crée un contact</button>
+                </div>
+            </div>
+            <div class="btnContact">
+                <span class="material-symbols-outlined">person</span>
+                <input type="button" class="contact" value="Contacts"/>
+                <!-- onclick="contact_table()" -->
+            </div>
+            <div class="btnFrequent">
+                <span class="material-symbols-outlined">history</span>
+                <a href="#" class="frequent">Fréquents</a>
+            </div>
+            <div id="libelles">
+                <div class="btnlabel">
+                    <button class="labelBtn" id="open" >Libellé</button>
+                    <span class="material-symbols-outlined">add</span>
+                </div>
+                <div id="btnLibelle" class="btnLibelle">
+                    <form class="libelleContent" id="libelleContent">
+                        <div class="contenueLibelle">
+                            <label>Créer un libellé</label>
+                            <input type="text" class="textName" id="labelInput" placeholder="Nouveau libellé">     
+                            <button class="btnreset" id="btnreset" onclick="closeLabel()">Non, ne rien faire</button>
+                            <button type="submit" class="submit" id="saveLabelButton" onclick="saveLabel()">Enregistrer</button>
+                        </div>
+                        <div class="newLibelle" id="newLibelle">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        <div class="main__content" id="main-content">
+            <div id="contents">
+                <h2 class="pageVeriege"> Contacts</h2>
+                <img src="/image/accuielle.png" alt="" class="accueil">
+                <p class="parag">Aucun contact pour l'instant</p>
+                <div class="basPhoto">
+                    <div class="btnAcueilAddContact">
+                        <span class="material-symbols-outlined" id="basPage">person</span>
+                        <button class="btnCreer">Créer un <br>contact</button>
+                    </div>
+                    <div class="btnAcueilAddContact">
+                        <span class="material-symbols-outlined" id="basPage">offline_bolt</span>
+                        <button class="btnCreer">Contacts <br>d'importation</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- partie formulaire -->
+
+            <div class="popup invisible" id="popup">
+                <div class="imageContact">
+                    <img src="/image/imageRemplace.png" alt="" class="auto">
+                    <span class="material-symbols-outlined addCircle">add_circle</span>
+                </div>
+                <button class="libelles"><strong>+</strong> Libellé</button>
+                        
+                <form id="contactForm">
+                    <div class="champNom">
+                        <div class="champPrenom">
+                            <span class="material-symbols-outlined" id="iconePersone">person</span>
+                            <input type="text" id="prenom" name="Prénom" placeholder="Prénom" required class="inputPrenom"><br>
+                        </div>
+                        <div class="champNoms">
+                            <input type="text" id="name" name="name" placeholder="Nom" required>
+                            <span class="material-symbols-outlined">expand_more</span><br>
+                        </div>
+                    </div>
+                    <div class="entreprise">
+                        <span class="material-symbols-outlined">source_environment</span>
+                        <input type="text" class="textzone" name="entreprise" placeholder="Entreprise" id="entreprise" required><br>    
+                    </div>
+                    <div class="entrepriseFonction">
+                        <input type="text" class="textzone" name="fonction" placeholder="Fonction" id="fonction" required>
+                        <span class="material-symbols-outlined">expand_more</span><br>
+                    </div>
+                    <div class="mail">
+                        <span class="material-symbols-outlined">mail</span>
+                        <input type="email" id="email" name="email" placeholder="email" required><br>
+                    </div>
+                    <div class="phones">
+                        <span class="material-symbols-outlined">call</span>
+                        <input type="tel" id="phone" name="phone" value="+243" required><br><br>
+                    </div>
+                    
+                    <button type="button" onclick="addContact()" class="btnEnregistre">Enregistrer</button>
+                </form>
+
+            </div>
+            
+            <div class="tableau invisibles" id="tableau">
+                <h2>Contacts (<span id="contactCount">0</span>)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>E-mail</th>
+                            <th>Numéro de téléphone</th>
+                            <th> Fonction et entreprise</th>
+                            <th>Libellées</th>
+                            <!-- <th>Action</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="contactTableBody">
+                        <!-- Les contacts ajoutés apparaîtront ici -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    
+    </div> <script src="/JavaScript/index.js">
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"> </script>
+    <script nomodule src="https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"> </script>
+    <script src="../build/js/intlTelInput.js"></script>
+    <script>
+        let input = document.querySelector("#phone");
+        window.intlTelInput(input,{})
+    </script>
+</body>
+</html>
